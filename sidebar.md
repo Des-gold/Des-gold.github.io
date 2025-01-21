@@ -1,4 +1,4 @@
-<!-- docs/_sidebar.md -->
+<!-- sidebar.md -->
 
 * [首页](/)
 
