@@ -1,4 +1,4 @@
-## Linux DHCP配置
+## DHCP配置
 
 #### 简介
 
@@ -79,7 +79,7 @@ PID file: /var/run/dhcpd.pid
 Source compiled to use binary-leases
 ```
 
-## Linux DHCP中继配置
+## DHCP中继配置
 
 | 主机                 | 网卡           | IP              | GW          |
 | -------------------- | -------------- | --------------- | ----------- |
