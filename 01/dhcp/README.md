@@ -1,4 +1,4 @@
-## DHCP配置
+## Linux DHCP配置
 
 #### 简介
 
