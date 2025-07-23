@@ -11,6 +11,8 @@
   * 新华三
     * [M-LAG](02/hcl/m-lag.md)
     * [BGP](02/hcl/bgp.md)
+    * [MPLS VPN](02/hcl/mplsvpn.md)
+    * [IPsec VPN](02/hcl/ipsecvpn.md)
   * 锐捷
     * [DHCP](02/ruijie/dhcp.md)
     * [GRE over IPsec](02/ruijie/greoveripsec.md)
