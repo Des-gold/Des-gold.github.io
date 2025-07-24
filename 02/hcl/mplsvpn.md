@@ -2,6 +2,8 @@
 
 ![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/mpls_option_comparison.png)
 
+
+
 ## 跨域VPN-OptionA配置
 
 #### 简介
