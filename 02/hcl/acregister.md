@@ -1,4 +1,4 @@
-## 无线控制器二层注册配置
+## 二层注册配置
 
 #### 简介
 
@@ -155,7 +155,7 @@ MAC address    User name            AP name               R IP address      VLAN
 
 
 
-## 无线控制器三层注册配置
+## 三层注册配置
 
 #### 简介
 
