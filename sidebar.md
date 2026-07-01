@@ -13,6 +13,7 @@
     * [BGP](02/hcl/bgp.md)
     * [MPLS VPN](02/hcl/mplsvpn.md)
     * [IPsec VPN](02/hcl/ipsecvpn.md)
+    * [无线AP注册](02/hcl/acregister.md)
   * 锐捷
     * [DHCP](02/ruijie/dhcp.md)
     * [GRE over IPsec](02/ruijie/greoveripsec.md)
