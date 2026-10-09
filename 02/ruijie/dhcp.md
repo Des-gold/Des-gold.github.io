@@ -6,7 +6,7 @@
 
 #### 实验拓扑
 
-![](https://s3.bmp.ovh/imgs/2024/10/10/f55a8aca310d2647.png)
+![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/Ruijie-Picture/dhcp.png)
 
 #### 实验需求
 
@@ -81,7 +81,7 @@ MTU         : 1500
 
 #### 实验拓扑
 
-![](https://s3.bmp.ovh/imgs/2024/10/10/ac1279d4884a07b2.png)
+![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/Ruijie-Picture/dhcp_relay.png)
 
 #### 实验需求
 
@@ -159,7 +159,7 @@ IP address        Hardware address       Lease expiration            Type
 
 #### 实验拓扑
 
-![](https://s3.bmp.ovh/imgs/2024/10/10/ac1279d4884a07b2.png)
+![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/Ruijie-Picture/dhcp_snooping.png)
 
 #### 实验需求
 

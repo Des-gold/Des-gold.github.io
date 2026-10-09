@@ -6,7 +6,7 @@
 
 ### 实验拓扑
 
-![](https://s3.bmp.ovh/imgs/2024/10/10/0dfeb6b6e805719a.png)
+![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/Ruijie-Picture/vrrp.png)
 
 ### 实验需求
 

@@ -6,7 +6,7 @@
 
 #### 实验拓扑
 
-![](https://s3.bmp.ovh/imgs/2024/10/07/30a1ba20a4f95941.png)
+![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/Ruijie-Picture/ipsec_static.png)
 
 #### 实验需求
 
@@ -170,7 +170,7 @@ RSR1#show crypto isakmp sa
 
 #### 实验拓扑
 
-![](https://s3.bmp.ovh/imgs/2024/10/08/41c5777f789d8254.png)
+![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/Ruijie-Picture/ipsec_dynamic.png)
 
 说明:若总部的IP地址固定，而分公司是采用拨号方式上网的（IP地址不固定），那么可以采用动态IPSec VPN。我将`11.1.1.0/24`和`12.1.1.0/24`模拟为`无固定IP`
 
@@ -357,7 +357,7 @@ VPCS> ping 172.16.1.1
 
 #### 实验拓扑
 
-![](https://s3.bmp.ovh/imgs/2024/10/09/caac8eaa30b8d1a7.png)
+![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/Ruijie-Picture/ipsec_aggressive.png)
 
 说明:`RSR1`的`G0/0`无法模拟无固定地址，故以`10.1.1.2`模拟。
 
