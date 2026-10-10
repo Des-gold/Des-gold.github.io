@@ -24,7 +24,7 @@
 
 ### 基础配置
 
-```
+```bash
 Router>enable 
 Router#configure terminal 
 Ruijie(config)#hostname R1 
@@ -64,7 +64,7 @@ R3(config-if-FastEthernet 0/1)#exit
 
 ### 路由配置
 
-```
+```bash
 R1(config)#router rip 
 R1(config-router)#version 2     //启用rip版本2 
 R1(config-router)#no auto-summary     //关闭自动汇总 
@@ -96,7 +96,7 @@ R3(config-router)#exit
 
 如下示例，匹配路由条目`172.16.1.32/27`、`172.16.1.48/28`和`172.16.1.56/29`，acl需要写3个ace条目，前缀列表只要1个条目
 
-```
+```bash
 1）使用acl匹配路由条目 
 注意： 
 此处acl匹配的是路由条目，掩码用0.0.0.0精确匹配对应的路由条目 
@@ -118,7 +118,7 @@ R2(config)#ip prefix-list ruijie seq 10 permit 172.16.1.0/24 ge 28 le 30   //定
 
 #### 过滤路由
 
-```
+```bash
 1）distribute-list 调用acl做路由过滤 
 R2(config)#router ospf 1    
 R2(config-router)#distribute-list 1 out rip     //把rip路由重分发进ospf时做路由过滤（注意方向必须是out） 
@@ -132,7 +132,7 @@ R2(config-router)#exit
 
 验证
 
-```
+```bash
 R3#show ip route 
 ...
  

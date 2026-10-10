@@ -7,13 +7,81 @@
   <meta name="keywords" content="帅的博客,德帅的博客,帅的文档" />
   <meta name="description" content="提供详细的 Linux 配置以及锐捷、新华三交换机路由器配置">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- Docsify v5 核心主题（和官网一致） -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css">
+  <!-- 核心主题深色模式，默认关闭，由右上角按钮切换 -->
+  <link id="dark-theme" rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/addons/core-dark.min.css" disabled>
+  <script>
+    // 页面加载前先决定深浅色，避免闪烁：优先用上次的选择，否则跟随系统
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.getElementById('dark-theme').disabled = !dark;
+    })();
+  </script>
+  <style>
+    :root {
+      /* 侧边栏宽度：和原来 v4 一样的 300px（v5 默认 280px） */
+      --sidebar-width: 300px;
+      /* 正文宽度：和 v4 一样占 80%，随窗口变化（v5 默认固定 72ch） */
+      --content-max-width: 80%;
+    }
+
+    /* 右上角深色模式切换按钮 */
+    #theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      z-index: 100;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(128, 128, 128, .35);
+      background: var(--color-bg, #fff);
+      color: var(--color-text, #34495e);
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .12);
+    }
+    #theme-toggle:hover {
+      border-color: var(--theme-color);
+    }
+
+    /* 文章链接只保留 v5 自带箭头，去掉旧折叠插件重复画的那个（目录的箭头不受影响） */
+    .sidebar-nav li:has(> a)::before {
+      display: none !important;
+    }
+  </style>
   <!-- 站点收录 -->
   <meta name="baidu-site-verification" content="codeva-1Hn5OLK7yz" />
   <meta name="msvalidate.01" content="E53D91C71E13320464C8321F286B89C1" />
   <meta name="google-site-verification" content="c-6Sb605lynrXvGJpluwACxXGP_gZC9sFusuvhicP0Q" />
+
+
 </head>
-<body>
+<!-- sidebar-link-clamp：长标题只显示一行，超出部分用省略号（和 v4 一样） -->
+<body class="sidebar-chevron-left sidebar-toggle-chevron sidebar-link-clamp"> 
+  <nav>
+
+  <!-- 深色模式切换按钮 -->
+  <button id="theme-toggle" title="切换深色/浅色模式" aria-label="切换深色模式"></button>
+  <script>
+    (function () {
+      var sheet = document.getElementById('dark-theme');
+      var btn = document.getElementById('theme-toggle');
+      function updateIcon() {
+        btn.textContent = sheet.disabled ? '🌙' : '☀️';
+      }
+      btn.addEventListener('click', function () {
+        sheet.disabled = !sheet.disabled;
+        localStorage.setItem('theme', sheet.disabled ? 'light' : 'dark');
+        updateIcon();
+      });
+      updateIcon();
+    })();
+  </script>
+
   <div id="app"></div>
   <script>
     window.$docsify = {
@@ -30,13 +98,14 @@ search: {
         },
     }
   </script>
-  <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- Docsify v5 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
 
 </script>
 </body>
+
 </html>

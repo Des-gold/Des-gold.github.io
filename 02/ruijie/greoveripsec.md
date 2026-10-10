@@ -20,7 +20,7 @@
 
 #### 基础配置
 
-```
+```bash
 Router>enable  
 Router#configure terminal 
 Router(config)#hostname RSR1
@@ -51,7 +51,7 @@ RSR2(config-router)#ip route 0.0.0.0 0.0.0.0 11.1.1.1
 
 #### GRE配置
 
-```
+```bash
 RSR1(config)#int tunnel 10 
 RSR1(config-if-Tunnel 10)#tunnel mode gre  ip 
 RSR1(config-if-Tunnel 10)#tunnel  source 10.1.1.2 
@@ -78,7 +78,7 @@ RSR2(config-router)#network 192.168.2.0 0.0.0.255 area 0
 
 #### 要点
 
-```
+```bash
 （1）配置ipsec感兴趣流
 （2）配置isakmp策略
 （3）配置预共享密钥
@@ -96,7 +96,7 @@ RSR2(config-router)#network 192.168.2.0 0.0.0.255 area 0
 
 #### 配置
 
-```
+```bash
 RSR1:
 RSR1(config)#access-list 100 permit ip 10.1.1.2 0.0.0.0  11.1.1.2  0.0.0.0
  
@@ -144,7 +144,7 @@ RSR2(config-if-GigabitEthernet 0/0)#crypto map mymap
 
 1.使用VPC3访问VPC4并抓包
 
-```
+```bash
 VPCS> ping 192.168.2.1
  
 84 bytes from 192.168.2.1 icmp_seq=1 ttl=62 time=7.395 ms
@@ -158,7 +158,7 @@ VPCS> ping 192.168.2.1
 
 2.查看isakmp sa是否已经协商成功
 
-```
+```bash
 RSR1(config)#show crypto isakmp sa 
  destination       source            state                    conn-id           lifetime(second) 
  11.1.1.2          10.1.1.2          IKE_IDLE                 1                 83983    

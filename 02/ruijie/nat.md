@@ -18,7 +18,7 @@
 
 #### 基础配置
 
-```
+```bash
 Switch>enable 
 Switch#configure terminal 
 Switch(config)#hostname Ruijie-SW2
@@ -63,7 +63,7 @@ SW(dhcp-config)#exit
 
 把内部主机的ip地址一对一的映射成公网ip地址，或者 内部主机的ip地址+端口 一对一的映射成 公网ip地址+端口。通常用在需要将内部主机映射成公网地址，或者内部服务器的某个端口映射成公网地址的某个端口，达到通过访问公网地址或者公网地址+端口号来访问内部服务器的目的。
 
-```
+```bash
 Router(config)#int gi 0/1 
 Router(config-if-GigabitEthernet 0/1)#ip nat outside 
 Router(config-if-GigabitEthernet 0/1)#int gi 0/0 
@@ -81,7 +81,7 @@ ip nat inside source static：将内部IP地址192.168.1.10映射到外部IP地�
 
 公网地址池的IP地址+端口号来对应和区别各个数据流进行网络地址转换，以达到多内部主机通过少量公网IP地址来访问外部网络的目的。通常用在有多个1个出口有多个公网ip地址的情况
 
-```
+```bash
 Router(config)#int gi 0/1 
 Router(config-if-GigabitEthernet 0/1)#ip nat outside 
 Router(config-if-GigabitEthernet 0/1)#int gi 0/0 
@@ -105,7 +105,7 @@ ip nat inside source list：将匹配ACL的内部IP地址转换为地址池中�
 
 端口地址转换，又叫网络地址端口转换（NAPT），通过 外网接口的IP地址+端口号来对应和区别各个数据流进行网络地址转换，以达到多内部主机通过外网接口的IP地址来访问外部网络的目的。通常用在只有一个公网地址时的场景。
 
-```
+```bash
 Router(config)#int gi 0/1 
 Router(config-if-GigabitEthernet 0/1)#ip nat outside 
 Router(config-if-GigabitEthernet 0/1)#int gi 0/0 
@@ -122,7 +122,7 @@ Router(config)# ip nat inside source list 100 interface GigabitEthernet0/1 overl
 
 #### NAT 配置验证
 
-```
+```bash
 显示NAT转换条目
 Ruijie# show ip nat translations
  
@@ -134,7 +134,7 @@ Ruijie# show ip nat statistics
 
 使用内网VPCS或Server访问外网
 
-```
+```bash
 VPCS> ping 100.1.1.1
  
 84 bytes from 100.1.1.1 icmp_seq=1 ttl=63 time=7.715 ms

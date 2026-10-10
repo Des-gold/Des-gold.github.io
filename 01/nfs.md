@@ -6,14 +6,14 @@
 
 ### 安装服务
 
-```
+```bash
 [root@server01 ~]# dnf install nfs-utils –y
 [root@server01 ~]# dnf install rpcbind –y
 ```
 
 ### 创建 NFS 共享及配置
 
-```
+```bash
 [root@server01 ~]# mkdir /test
 [root@server01 ~]# chmod 777 /test
 [root@server01 ~]# vi /etc/exports
@@ -26,7 +26,7 @@
 
 ### 启动服务防火墙放行服务
 
-```
+```bash
 [root@server01 ~]# systemctl restart rpcbind
 [root@server01 ~]# systemctl restart nfs-utils
 [root@server01 ~]# setenforce 0
@@ -40,7 +40,7 @@
 
 ### Linxu客户端
 
-```
+```bash
 [root@server02 ~]#showmount -e 192.168.100.131
 Export list for 192.168.100.131:
 /test 192.168.100.0/24
@@ -56,7 +56,7 @@ Export list for 192.168.100.131:
 
 Linux客户端
 
-```
+```bash
 [root@server02 ~]#mkdir /test
 [root@server02 ~]#mount -t nfs4 192.168.100.131:/test /test
 [root@server02 ~]# df -h | grep test
@@ -67,7 +67,7 @@ Linux客户端
 
 Linux客户端
 
-```
+```bash
 [root@server02 ~]# vi /etc/fstab 
  
 ====添加====

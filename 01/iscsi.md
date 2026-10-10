@@ -17,14 +17,14 @@
 
 #### 安装ISCSI服务
 
-```
+```bash
 [root@server01 ~]# dnf install targetcli –y
 [root@server01 ~]# systemctl enable --now target
 ```
 
 #### 创建共享设备
 
-```
+```bash
 [root@server01 ~]# targetcli 
 targetcli shell version 2.1.fb49
 Copyright 2011-2013 by Datera, Inc and others.
@@ -72,7 +72,7 @@ o- / ...........................................................................
 
 #### 防火墙放行服务
 
-```
+```bash
 [root@server01 ~]# setenforce 0
 [root@server01 ~]# firewall-cmd --permanent --add-service=iscsi-target
 [root@server01 ~]# firewall-cmd --reload
@@ -82,14 +82,14 @@ o- / ...........................................................................
 
 #### 安装ISCSI客户端服务
 
-```
+```bash
 [root@server02 ~]# dnf install iscsi-initiator-utils –y
 [root@server02 ~]# systemctl start iscsi
 ```
 
 设置客户端iscsi名称
 
-```
+```bash
 [root@server02 ~]# vi /etc/iscsi/initiatorname.iscsi
  
 ====修改====
@@ -98,14 +98,14 @@ InitiatorName=iqn.2024-07.com.shaer-disk:client01
 
 #### 发现远程服务器的共享
 
-```
+```bash
 [root@server02 ~]# iscsiadm --mode discovery --type sendtargets --portal 192.168.100.131
 192.168.100.131:3260,1 iqn.2024-07.com.shaer-disk:server
 ```
 
 #### 连接共享
 
-```
+```bash
 [root@server02 ~]# iscsiadm --mode node iqn.2024-07.com.shaer-disk:server --portal 192.168.100.131:3260 –login
  
 ====查看连接的设备====
@@ -124,7 +124,7 @@ nvme0n1     259:0    0  20G  0 disk
 
 创建分区(略)
 
-```
+```bash
 [root@server02 ~]# fdisk /dev/sda  
 ...
 [root@server02 ~]# mkfs.ext4 /dev/sda1
@@ -132,7 +132,7 @@ nvme0n1     259:0    0  20G  0 disk
 
 #### 自动挂载
 
-```
+```bash
 [root@server02 ~]# vi /etc/fstab
  
 ====添加====
@@ -169,14 +169,14 @@ nvme0n1     259:0    0  20G  0 disk
 
 #### 安装ISCSI服务
 
-```
+```bash
 [root@server01 ~]# dnf install targetcli –y
 [root@server01 ~]# systemctl enable --now target
 ```
 
 #### 创建共享设备
 
-```
+```bash
 [root@server01 ~]# targetcli 
 targetcli shell version 2.1.fb49
 Copyright 2011-2013 by Datera, Inc and others.
@@ -225,7 +225,7 @@ o- / ...........................................................................
 
 #### 防火墙放行服务
 
-```
+```bash
 [root@server01 ~]# setenforce 0
 [root@server01 ~]# firewall-cmd --permanent --add-service=iscsi-target
 [root@server01 ~]# firewall-cmd --reload
@@ -235,14 +235,14 @@ o- / ...........................................................................
 
 #### 安装ISCSI客户端服务
 
-```
+```bash
 [root@server02 ~]# dnf install iscsi-initiator-utils –y
 [root@server02 ~]# systemctl start iscsi
 ```
 
 设置客户端iscsi名称
 
-```
+```bash
 [root@server02 ~]# vi /etc/iscsi/initiatorname.iscsi
  
 ====修改====
@@ -251,14 +251,14 @@ InitiatorName=iqn.2024-07.com.shaer-disk:client01
 
 #### 发现远程服务器的共享
 
-```
+```bash
 [root@server02 ~]# iscsiadm --mode discovery --type sendtargets --portal 192.168.100.131
 192.168.100.131:3260,1 iqn.2024-07.com.shaer-disk:server
 ```
 
 #### 连接共享
 
-```
+```bash
 [root@server02 ~]# iscsiadm --mode node iqn.2024-07.com.shaer-disk:server --portal 192.168.100.131:3260 –login
  
 ====查看连接的设备====
@@ -280,7 +280,7 @@ nvme0n1     259:0    0  20G  0 disk
 
 创建分区(略)
 
-```
+```bash
 [root@server02 ~]# fdisk /dev/sda  
 ...
 [root@server02 ~]# partprobe /dev/sdb
@@ -293,7 +293,7 @@ nvme0n1     259:0    0  20G  0 disk
 
 #### 默认没有配置文件/etc/multipath.conf,需要复制例子配置文件
 
-```
+```bash
 [root@server02 ~]# dnf install device-mapper-multipath-libs –y
 [root@server02 ~]# cp /usr/share/doc/device-mapper-multipath/multipath.conf /etc/
 [root@server02 ~]# systemctl start multipathd
@@ -361,7 +361,7 @@ nvme0n1         259:0    0  20G  0 disk
 
 #### 自动挂载
 
-```
+```bash
 [root@server02 ~]# vi /etc/fstab
  
 ====添加====

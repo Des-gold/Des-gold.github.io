@@ -8,7 +8,7 @@
 
 ### 安装需要的软件
 
-```
+```bash
 [root@server01 ~]# dnf install httpd -y
 [root@server01 ~]# dnf install mod_ssl –y
 [root@server01 ~]# dnf install openssl –y
@@ -18,7 +18,7 @@
 
 #### 创建需要的文件
 
-```
+```bash
 [root@server01 ~]# mkdir /etc/pki/CA
 [root@server01 ~]# mkdir /etc/pki/CA/newcerts
 [root@server01 ~]# cd /etc/pki/CA/
@@ -28,13 +28,13 @@
 
 #### 创建CA证书的私钥
 
-```
+```bash
 [root@server01 CA]# openssl genrsa -out ca.key 2048
 ```
 
 #### 创建CA证书请求
 
-```
+```bash
 [root@server01 CA]# openssl req -new -key ca.key -out ca.csr
  
 You are about to be asked to enter information that will be incorporated
@@ -60,13 +60,13 @@ An optional company name []:
 
 #### 生成CA证书
 
-```
+```bash
 [root@server01 CA]# openssl x509 -req -days 3650 -in ca.csr -signkey ca.key -out ca.crt
 ```
 
 ### 更改openssl配置文件
 
-```
+```bash
 [root@server01 CA]# vi /etc/pki/tls/openssl.cnf
  
 ====查询下方内容====
@@ -95,13 +95,13 @@ DNS.2=ns.6bit.icu
 
 #### 生成服务器私钥
 
-```
+```bash
 [root@server01 CA]# openssl genrsa -out server.key 2048
 ```
 
 #### 生成服务器请求证书
 
-```
+```bash
 [root@server01 CA]# openssl req -new -key server.key -out server.csr -config /etc/pki/tls/openssl.cnf
  
 You are about to be asked to enter information that will be incorporated
@@ -127,13 +127,13 @@ An optional company name []:
 
 #### 生成服务器证书
 
-```
+```bash
 [root@server01 CA]# openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key -extensions v3_req -days 365 -config /etc/pki/tls/openssl.cnf
 ```
 
 ### 更改SSL配置文件
 
-```
+```bash
 [root@server01 ~]# vi /etc/httpd/conf.d/ssl.conf
  
 ====找下面两行====
@@ -151,7 +151,7 @@ SSLCertificateKeyFile /etc/pki/CA/server.key
 
 ### 防火墙放行
 
-```
+```bash
 [root@server01 ~]# systemctl enable --now httpd
 [root@server01 ~]# firewall-cmd --permanent --add-service=http
 [root@server01 ~]# firewall-cmd --permanent --add-service=https

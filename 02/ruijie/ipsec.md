@@ -18,7 +18,7 @@
 
 #### 基础配置
 
-```
+```bash
 Router>enable 
 Router#configure terminal 
 Router(config)#hostname RSR2 
@@ -54,7 +54,7 @@ RSR3(config-if-GigabitEthernet 0/1)#ip add 192.168.2.254 24
 > 当接口上要同时使用NAT和IPsec时会面临一个问题，配置完后IPsec后可能不生效？
 > 因为流量会优先匹配NAT流量，所以需要在NAT匹配流量中拒绝IPsec需要加密的流量
 
-```
+```bash
 RSR1(config)#int gi 0/0 
 RSR1(config-if-GigabitEthernet 0/0)#ip nat outside 
 RSR1(config-if-GigabitEthernet 0/0)#int gi 0/1 
@@ -84,7 +84,7 @@ RSR3(config)#ip nat inside source list 100 interface GigabitEthernet 0/0 overloa
 
 #### 要点
 
-```
+```bash
 （1）配置ipsec感兴趣流
 （2）配置isakmp策略
 （3）配置预共享密钥
@@ -95,7 +95,7 @@ RSR3(config)#ip nat inside source list 100 interface GigabitEthernet 0/0 overloa
 
 #### 配置
 
-```
+```bash
 RSR1:
 RSR1(config)#access-list 101 permit ip 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0.255  	//配置ipsec感兴趣流
  
@@ -142,7 +142,7 @@ RSR3(config)#crypto map mymap
 
 #### 1.使用VPC4访问VPC5
 
-```
+```bash
 VPCS> ping 192.168.2.1  
  
 84 bytes from 192.168.2.1 icmp_seq=1 ttl=62 time=12.527 ms
@@ -154,7 +154,7 @@ VPCS> ping 192.168.2.1
 
 #### 2.在RSR1上查看isakmp、ipsec sa是否已经协商成功
 
-```
+```bash
 RSR1#show crypto isakmp sa
  destination       source            state                    conn-id           lifetime(second) 
  11.1.1.2          10.1.1.2          IKE_IDLE                 1                 81791   
@@ -182,7 +182,7 @@ RSR1#show crypto isakmp sa
 
 #### 基础配置
 
-```
+```bash
 Router>enable 
 Router#configure terminal 
 Router(config)#hostname  RSR3
@@ -238,7 +238,7 @@ RSR2(config-if-GigabitEthernet 0/1)#ip route 0.0.0.0 0.0.0.0 12.1.1.1
 > 当接口上要同时使用NAT和IPsec时会面临一个问题，配置完后IPsec后可能不生效？
 > 因为流量会优先匹配NAT流量，所以需要在NAT匹配流量中拒绝IPsec需要加密的流量
 
-```
+```bash
 RSR1(config)#int gi 0/0 
 RSR1(config-if-GigabitEthernet 0/0)#ip nat outside 
 RSR1(config-if-GigabitEthernet 0/0)#int gi 0/1 
@@ -270,7 +270,7 @@ RSR3(config)#ip nat inside source list 101 interface GigabitEthernet 0/0 overloa
 
 #### 要点
 
-```
+```bash
 （1）配置ipsec感兴趣流
 （2）配置isakmp策略
 （3）配置预共享密钥
@@ -285,7 +285,7 @@ RSR3(config)#ip nat inside source list 101 interface GigabitEthernet 0/0 overloa
 
 #### 总部出口路由
 
-```
+```bash
 RSR3:
 RSR3(config)#crypto isakmp policy 1 		//创建新的isakmp策略 
 RSR3(isakmp-policy)#authentication pre-share 	//指定认证方式为“预共享密码”
@@ -307,7 +307,7 @@ RSR3(config-if-GigabitEthernet 0/0)#crypto map Smap
 
 分支2的配置类似（略）
 
-```
+```bash
 RSR1(config)#access-list 101 permit ip 192.168.1.0 0.0.0.255 172.16.1.0 0.0.0.255 
   
 RSR1(config)#crypto isakmp policy 1 
@@ -331,7 +331,7 @@ RSR1(config-if-GigabitEthernet 0/0)#crypto map mymap
 
 #### 1.使用VPC5访问财务部
 
-```
+```bash
 VPCS> ping 172.16.1.1  
  
 84 bytes from 172.16.1.1 icmp_seq=1 ttl=62 time=7.082 ms
@@ -371,7 +371,7 @@ VPCS> ping 172.16.1.1
 
 #### 基础配置
 
-```
+```bash
 Router>enable 
 Router#configure terminal 
 Router(config)#hostname RSR1
@@ -407,7 +407,7 @@ RSR3(config)#ip route 0.0.0.0 0.0.0.0 11.1.1.1
 
 #### 要点
 
-```
+```bash
 （1）配置isakmp策略     
 （2）配置预共享密钥     
 （3）配置isakmp模式自动识别
@@ -419,7 +419,7 @@ RSR3(config)#ip route 0.0.0.0 0.0.0.0 11.1.1.1
 
 #### 配置
 
-```
+```bash
 RSR3:
 RSR3(config)#crypto  isakmp policy  1 
 RSR3(isakmp-policy)#encryption 3des 
@@ -468,7 +468,7 @@ RSR1(config-if-GigabitEthernet 0/0)#crypto map mymap
 
 #### 1.使用VPC4访问VPC5
 
-```
+```bash
 RSR1#ping 172.168.1.1 source 192.168.1.1
 Sending 5, 100-byte ICMP Echoes to 172.168.1.1, timeout is 2 seconds:
   < press Ctrl+C to break >
@@ -478,7 +478,7 @@ Success rate is 100 percent (5/5), round-trip min/avg/max = 4/4/7 ms.
 
 #### 2.在RSR1上查看isakmp sa是否已经协商成功
 
-```
+```bash
 RSR1#show crypto isakmp sa
  destination       source            state                    conn-id           lifetime(second) 
  11.1.1.2          10.1.1.2          IKE_IDLE                 1       

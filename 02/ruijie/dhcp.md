@@ -14,7 +14,7 @@
 
 #### 配置
 
-```
+```bash
 SW2:
 Switch>enable 
 Switch#configure terminal 
@@ -36,7 +36,7 @@ SW2(config-if-range)#sw acc vlan 10
 
 主机VPC3/VPC4是否能够获取地址
 
-```
+```bash
 VPC3:
 VPCS> ip dhcp 
 DDORA IP 192.168.10.1/24 GW 192.168.10.254
@@ -89,7 +89,7 @@ MTU         : 1500
 
 #### 配置
 
-```
+```bash
 SW1:
 Switch>enable 
 Switch#configure terminal 
@@ -127,7 +127,7 @@ SW2(config-if-range)#sw acc vlan 10
 
 1.主机VPC3/VPC4是否能够获取地址
 
-```
+```bash
 VPC3:
 VPCS> ip dhcp 
 DDORA IP 192.168.10.3/24 GW 192.168.10.254
@@ -139,7 +139,7 @@ DDORA IP 192.168.10.4/24 GW 192.168.10.254
 
 2.在DHCP服务器查询有哪些终端
 
-```
+```bash
 SW1#show ip dhcp binding 
  
 Total number of clients   : 2
@@ -167,7 +167,7 @@ IP address        Hardware address       Lease expiration            Type
 
 #### 配置
 
-```
+```bash
 SW1:
 Switch>enable 
 Switch#configure terminal 
@@ -196,7 +196,7 @@ SW2(config-if-GigabitEthernet 0/2)#ip dhcp snooping trust   	 //连接DHCP服务
 
 1.主机VPC3/VPC4是否能够获取地址
 
-```
+```bash
 VPC3:
 VPCS> ip dhcp 
 DDORA IP 10.1.1.1/24 GW 10.1.1.254
@@ -208,7 +208,7 @@ DDORA IP 10.1.1.2/24 GW 10.1.1.254
 
 2.查看DHCP Snooping表及设置情况
 
-```
+```bash
 SW2(config)#show ip  dhcp snooping  binding 
  
 Total number of bindings: 2 

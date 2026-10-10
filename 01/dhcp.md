@@ -6,13 +6,13 @@
 
 #### 安装
 
-```
+```bash
 [root@server01 ~]# dnf install dhcp-server –y
 ```
 
 #### 修改服务配置文件
 
-```
+```bash
 [root@server01 ~]# vi /etc/dhcp/dhcpd.conf
  
 ====添加====
@@ -36,7 +36,7 @@ host win7
 
 #### 启动服务、防火墙放行服务
 
-```
+```bash
 [root@server01 ~]# systemctl enable --now dhcpd
 [root@server01 ~]# firewall-cmd --permanent --add-service=dhcp
 [root@server01 ~]# firewall-cmd –reload
@@ -44,7 +44,7 @@ host win7
 
 #### 报错解决方法
 
-```
+```bash
 [root@server01 ~]# dhcpd -t
 ====配置错误输出的内容====
 Internet Systems Consortium DHCP Server 4.3.6
@@ -92,7 +92,7 @@ Source compiled to use binary-leases
 
 分别在server01(DHCP服务器)和Relay(中继服务器)，安装dhcp-server、dhcp-relay服务
 
-```
+```bash
 [root@server01 ~]# dnf install dhcp-server -y
 [root@Relay ~]# dnf install dhcp-relay -y
 ```
@@ -101,7 +101,7 @@ Source compiled to use binary-leases
 
 配置DHCP作用域及添加路由
 
-```
+```bash
 [root@server01 ~]# vi /etc/dhcp/dhcpd.conf
  
 ====写入以下内容====
@@ -120,7 +120,7 @@ subnet 192.168.1.0 netmask 255.255.255.0{
 
 开启Relay(中继服务器)的ip转发模式
 
-```
+```bash
 [root@relay ~]# echo net.ipv4.ip_forward = 1 >> /etc/sysctl.conf 
 [root@relay ~]# sysctl -p 
 net.ipv4.ip_forward = 1
@@ -128,7 +128,7 @@ net.ipv4.ip_forward = 1
 
 在Relay(中继服务器)指定DHCP服务器
 
-```
+```bash
 [root@relay ~]# dhcrelay 172.16.42.10
 Dropped all unnecessary capabilities.
 Internet Systems Consortium DHCP Relay Agent 4.3.6

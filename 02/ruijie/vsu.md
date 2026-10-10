@@ -12,7 +12,7 @@
 
 ### 配置
 
-```
+```bash
 Ruijie>enable  
 Ruijie#configure terminal 
 Ruijie(config)#hostname S1    
@@ -48,7 +48,7 @@ BFD的双主机检测端口必须是**三层路由口**，二层口、三层AP�
 
 当用户将双主机检测端口从三层路由口转换为其他类型的端口模式时，BFD的双主机检测配置将自动清除，并给出提示。BFD检测采用扩展BFD，不能通过现有BFD的配置与显示命令配置双主机检测口。
 
-```
+```bash
 S1(config)#int gi 1/0/24 
 S1(config-if-GigabitEthernet 1/0/24)#no switchport 
 S1(config-if-GigabitEthernet 1/0/24)#int gi 2/0/24 
@@ -61,7 +61,7 @@ S1(config-vs-domain)#dual-active  bfd interface  gi2/0/24
 
 #### 验证
 
-```
+```bash
 Ruijie(config)#show switch virtual 
 Switch_id     Domain_id     Priority     Position     Status     Role          Description                      
 ----------------------------------------------------------------------------------------------------------------

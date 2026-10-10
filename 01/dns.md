@@ -6,7 +6,7 @@
 
 #### 安装服务及修改配置
 
-```
+```bash
 [root@server01 ~]# dnf install bind –y
 [root@server01 ~]# vi /etc/named.conf
  
@@ -25,7 +25,7 @@ options {
 
 #### 正向解析
 
-```
+```bash
 [root@server01 ~]# vi /etc/named.rfc1912.zones
  
 ====添加====
@@ -56,7 +56,7 @@ www     A       192.168.100.131
 
 #### 反向解析
 
-```
+```bash
 [root@server01 ~]# vi /etc/named.rfc1912.zones
  
 ==== 添加====
@@ -86,7 +86,7 @@ ns      A       192.168.100.131
 
 #### 启动、防火墙放行服务
 
-```
+```bash
 [root@server01 named]# systemctl start named
 [root@server01 named]# setenforce 0
 [root@server01 named]# firewall-cmd --permanent --add-service=dns
@@ -97,7 +97,7 @@ ns      A       192.168.100.131
 
 测试端将DNS设置为服务端的IP地址，需要安装测试工具(图形化免安装)
 
-```
+```bash
 [root@server01 named]# dnf install bind-utils -y 
 [root@server01 named]# nslookup www.test.com
 Server:         192.168.100.131
@@ -129,7 +129,7 @@ Address: 192.168.100.131
 
 #### 安装服务及修改配置
 
-```
+```bash
 [root@server02 ~]# dnf instal bind –y
 [root@server02 ~]# vi /etc/named.conf
  
@@ -164,7 +164,7 @@ zone "100.168.192.in-addr.arpa" IN {
 
 #### 启动服务防火墙放行服务
 
-```
+```bash
 [root@server02 ~]# systemctl restart named
 [root@server02 ~]# setenforce 0
 [root@server02 ~]# firewall-cmd --permanent --add-service=dns
@@ -175,14 +175,14 @@ zone "100.168.192.in-addr.arpa" IN {
 
 1.查看是否同步区域文件
 
-```
+```bash
 [root@server02 ~]# ls /var/named/slaves
 stest.loopback  test.empty
 ```
 
 2.将主DNS服务器的服务暂停，将测试端DNS设置为从服务器进行解析
 
-```
+```bash
 [root@server02 ~]# nslookup ns.test.com
 Server:         192.168.100.132
 Address:        192.168.100.132#53

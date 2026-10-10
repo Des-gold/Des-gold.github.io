@@ -16,7 +16,7 @@
 
 ### 配置
 
-```
+```bash
 SW:
 Switch#configure  terminal 
 Switch(config)#hostname SW 
@@ -80,7 +80,7 @@ RSR2(config-if-VLAN 20)#exit
 
 1.查看VRRP
 
-```
+```bash
 RSR1#show vrrp brief 
 Interface        Grp  Pri   timer   Own  Pre   State   Master addr          Group addr                  
 VLAN 10          1    120   3.53    -    P     Master  192.168.10.252       192.168.10.254   
@@ -94,7 +94,7 @@ VLAN 20          2    120   3.53    -    P     Master  192.168.20.253       192.
 
 2.VPC4访问VPC4
 
-```
+```bash
 VPCS> ping 192.168.10.254
  
 84 bytes from 192.168.10.254 icmp_seq=1 ttl=64 time=685.337 ms
