@@ -1,6 +1,6 @@
 ## 跨域VPN-Option方案对比
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/mpls_option_comparison.png)
+![](../../img/HCL-Picture/mpls_option_comparison.png)
 
 
 
@@ -22,7 +22,7 @@
 
 ### 1.组网图
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/optiona_v4.png)
+![](../../img/HCL-Picture/optiona_v4.png)
 
 | 设备     | 接口      | IP地址       | 设备     | 接口      | IP地址       |
 | -------- | --------- | ------------ | -------- | --------- | ------------ |
@@ -318,7 +318,7 @@ Ping 10.2.1.1 (10.2.1.1): 56 data bytes, press CTRL+C to break
 
 ### 1.组网图
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/optionb_v4.png)
+![](../../img/HCL-Picture/optionb_v4.png)
 
 | 设备     | 接口      | IP地址       | 设备     | 接口      | IP地址       |
 | -------- | --------- | ------------ | -------- | --------- | ------------ |
@@ -529,7 +529,7 @@ Ping 10.2.1.1 (10.2.1.1): 56 data bytes, press CTRL+C to break
 
 ### 1.组网图
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/optionc1_v4.png)
+![](../../img/HCL-Picture/optionc1_v4.png)
 
 ### 2.组网需求
 
@@ -809,7 +809,7 @@ Ping 10.2.1.1 (10.2.1.1): 56 data bytes, press CTRL+C to break
 
 ### 1.组网图
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/optionc2_v4.png)
+![](../../img/HCL-Picture/optionc2_v4.png)
 
 | 设备     | 接口      | IP地址       | 设备     | 接口      | IP地址       |
 | -------- | --------- | ------------ | -------- | --------- | ------------ |

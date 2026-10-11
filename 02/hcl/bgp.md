@@ -8,7 +8,7 @@
 
 ### 1.组网图
 
-<img src="https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/bgp_community.png" style="zoom: 80%;" />
+<img src="../../img/HCL-Picture/bgp_community.png" style="zoom: 80%;" />
 
 | 设备    | 接口      | IP地址       | 设备    | 接口      | IP地址       |
 | ------- | --------- | ------------ | ------- | --------- | ------------ |
@@ -170,7 +170,7 @@
 
 ### 1.组网图
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/bgp_reflector.png)
+![](../../img/HCL-Picture/bgp_reflector.png)
 
 | 设备    | 接口      | IP地址       | 设备    | 接口      | IP地址       |
 | ------- | --------- | ------------ | ------- | --------- | ------------ |
@@ -295,7 +295,7 @@ RouterC]ospf 1 router-id 3.3.3.3
 
 ### 1.组网图
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/bgp_confederation.png)
+![](../../img/HCL-Picture/bgp_confederation.png)
 
 | 设备     | 接口      | IP地址       | 设备     | 接口      | IP地址       |
 | -------- | --------- | ------------ | -------- | --------- | ------------ |

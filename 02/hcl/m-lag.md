@@ -6,7 +6,7 @@
 
 ### 1.组网图
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/m-lag_basic.png)
+![](../../img/HCL-Picture/m-lag_basic.png)
 
 注：系统版本为HCL v5.5.0，设备型号为S6850
 
@@ -224,7 +224,7 @@ Remote:
 
 ### 1.组网图
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/m-lag_l3.png)
+![](../../img/HCL-Picture/m-lag_l3.png)
 
 注：系统版本为HCL v5.5.0，设备型号为S6850
 

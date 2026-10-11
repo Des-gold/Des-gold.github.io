@@ -6,7 +6,7 @@
 
 ### 实验拓扑
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/Ruijie-Picture/gre_over_ipsec.png)
+![](../../img/Ruijie-Picture/gre_over_ipsec.png)
 
 说明:`VPC3`模拟分部，`VPC4`模拟总部，`RSR1/RSR2`均为出口路由
 
@@ -154,7 +154,7 @@ VPCS> ping 192.168.2.1
 84 bytes from 192.168.2.1 icmp_seq=5 ttl=62 time=6.661 ms
 ```
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/Ruijie-Picture/gre_over_ipsec_messag.png)
+![](../../img/Ruijie-Picture/gre_over_ipsec_messag.png)
 
 2.查看isakmp sa是否已经协商成功
 

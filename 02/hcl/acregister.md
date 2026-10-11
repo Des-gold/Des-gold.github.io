@@ -6,7 +6,7 @@
 
 ### 1.组网图
 
-<img src="https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/acregister_l2.png" />
+<img src="../../img/HCL-Picture/acregister_l2.png" />
 
 | 设备      | 接口    | IP地址          | 设备 | 接口    | IP地址          |
 | --------- | ------- | --------------- | ---- | ------- | --------------- |
@@ -163,7 +163,7 @@ MAC address    User name            AP name               R IP address      VLAN
 
 ### 1.组网图
 
-<img src="https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/acregister_l3.png" />
+<img src="../../img/HCL-Picture/acregister_l3.png" />
 
 | 设备      | 接口    | IP地址          | 设备 | 接口    | IP地址          |
 | --------- | ------- | --------------- | ---- | ------- | --------------- |

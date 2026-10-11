@@ -6,7 +6,7 @@
 
 ### 1.组网图
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/ipsec_man.png)
+![](../../img/HCL-Picture/ipsec_man.png)
 
 | 设备     | 接口      | IP地址             | 设备    | 接口  | IP地址        |
 | -------- | :-------- | :----------------- | :------ | :---- | :------------ |
@@ -235,7 +235,7 @@ Ping 114.114.114.114 (114.114.114.114) from 10.1.1.1: 56 data bytes, press CTRL_
 
 ### 1.组网图
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/HCL-Picture/ipsec_aggressive.png)
+![](../../img/HCL-Picture/ipsec_aggressive.png)
 
 | 设备    | 接口  | IP地址        | 设备     | 接口      | IP地址             |
 | ------- | :---- | :------------ | :------- | :-------- | :----------------- |

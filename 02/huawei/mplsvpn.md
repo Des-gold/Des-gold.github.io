@@ -2,7 +2,7 @@
 
 ### 1.组网图
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/eNSP-Picture/optionb_v4.png)
+![](../../img/eNSP-Picture/optionb_v4.png)
 
 
 
@@ -51,7 +51,7 @@ CE1和CE2属于同一个VPN。CE1通过AS100的PE1接入，CE2通过AS200的PE2�
 
 ### 1.组网图
 
-![https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/eNSP-Picture/optionc_v4.png](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/eNSP-Picture/optionc_v4.png)
+![../../img/eNSP-Picture/optionc_v4.png](../../img/eNSP-Picture/optionc_v4.png)
 
 | 设备  | 接口      | IP地址       | 设备  | 接口      | IP地址       |
 | ----- | --------- | ------------ | ----- | --------- | ------------ |

@@ -6,7 +6,7 @@
 
 ### 实验拓扑
 
-![](https://kim-1259075102.cos.ap-guangzhou.myqcloud.com/Ruijie-Picture/vrrp.png)
+![](../../img/Ruijie-Picture/vrrp.png)
 
 ### 实验需求
 
