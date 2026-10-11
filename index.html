@@ -11,6 +11,11 @@
   <!-- Core Theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css">
   <style>
+    /* 侧边栏顶部不显示 name（name 只用于网页标题） */
+    .sidebar .app-name {
+      display: none;
+    }
+
     /* 侧边栏左侧留出缩进，让折叠插件的箭头显示出来（v4 Vue 主题也是 15px） */
     .sidebar-nav > ul {
       margin-left: 15px;
@@ -42,6 +47,7 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
+      // 网页标题显示为「页面名 - 帅的文档」
       name: '帅的文档',
       repo: '',
       loadSidebar: '_sidebar.md',
